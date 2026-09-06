@@ -2,7 +2,7 @@
 {% block content %}
 <header>
     <div id="logotype">Fetty</div>
-    <img src="{{ url_for('static', filename='images/giphy/giphy.gif')}}" alt="Random animated gif">
+    <img src="{{ url_for('static', filename='images/giphy/' + random_image)}}" alt="Random animated gif">
 </header>
 <main>
     <div id="container">
@@ -37,6 +37,6 @@
     </div>
 </main>
 <footer>
-    <p>A small app to Convert currencies</p>
+    <p>A small app to convert currencies</p>
 </footer>
 {% endblock %}
