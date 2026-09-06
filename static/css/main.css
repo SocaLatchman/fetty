@@ -1,0 +1,123 @@
+
+* {
+padding: 0;
+margin: 0;    
+}
+
+html {
+box-sizing: border-box;    
+}
+
+.m-plus-u-font {
+font-family: "M PLUS U", sans-serif;
+font-optical-sizing: auto;
+font-weight: 900;
+font-style: normal;
+}
+
+header {
+width: 80%;
+margin: 0 auto;  
+padding: 25px 0 50px 0;
+text-align: center;
+}
+
+#logotype {
+font: 900 3em "M PLUS U", sans-serif;
+margin: 10px 0;
+}
+
+header img {
+display: block;    
+margin: 0 auto; 
+width: 256px;
+height: 256px;  
+border-radius: 8px; 
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+appearance: none;    
+}
+
+input[type='number'] {
+appearance: textfield;
+outline: transparent;
+width: 100%;
+height: 45px;   
+border: none; 
+font: 600 2em "M PLUS U", sans-serif;
+padding-left: 8px;
+}
+
+#container {
+width: 80%;
+margin: 0 auto;   
+}
+
+#flex-content {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+border: 1px solid #ccc; 
+border-radius: 8px;
+padding: 5px;
+}
+
+#left-content {
+display: flex;
+width: 47.5%;  
+}
+
+#right-content {
+display: flex;   
+width: 47.5%;
+}
+
+#currency-switcher {
+cursor: pointer;  
+width: 5%;
+margin: 0 10px;
+}
+
+.currency-amount-field {
+display: flex;    
+align-items: center;   
+font: 600 0.9em "M PLUS U", sans-serif; 
+width: 75%;
+}
+
+.currency-options  {
+display: flex;
+align-items: center;
+justify-content: right;
+font: 600 0.9em "M PLUS U", sans-serif; 
+width: 15%;
+}
+
+.currency-options img {
+width: 28px;
+height: 28px;
+border-radius: 8px;
+}
+
+.dropdown {
+display: inline;
+cursor: pointer;
+position: relative;
+top: 5px;
+left: 10px;
+font-size: 0.7em;
+color: #595959;
+}
+
+footer {
+width: 78%;
+margin: 25px auto 0 auto;    
+background-color: rgba(223, 223, 223, 0.2);
+border-radius: 8px;
+padding: 15px;
+text-align: center;    
+font: 500 0.9em "M PLUS U", sans-serif; 
+}

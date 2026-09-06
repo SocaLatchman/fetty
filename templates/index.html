@@ -2,7 +2,7 @@
 {% block content %}
 <header>
     <div id="logotype">Fetty</div>
-    <img src="{{ url_for('static', filename='images/giphy/giphy-16.gif')}}" alt="Random animated gif">
+    <img src="{{ url_for('static', filename='images/giphy/giphy.gif')}}" alt="Random animated gif">
 </header>
 <main>
     <div id="container">
@@ -14,10 +14,10 @@
              </div>
              <div class="currency-options">
                <img src="{{ url_for('static', filename='images/flags/united-states-of-america.png')}}" alt="Country flag of selected currency">
-               <div class="dropdown">&#9660;</div>
+               <div class="dropdown">USD &#9660;</div>
               </div>
            </div> 
-           <div class="currency-switcher">
+           <div id="currency-switcher">
             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="21" cy="21" r="21" fill="#D9D9D9"/>
               <path d="M33.5005 27.057L28.4395 21.9956C27.9545 21.5105 27.2322 21.3682 26.5996 21.6318C25.967 21.8954 25.561 22.507 25.561 23.1871V26.5614H8.69096C7.75783 26.5614 7.00395 27.3153 7.00395 28.2485C7.00395 29.1817 7.75783 29.9357 8.69096 29.9357H25.561V33.3099C25.561 33.9901 25.9722 34.6069 26.6049 34.8705C27.2375 35.1341 27.9597 34.9865 28.4447 34.5067L33.5058 29.4453C34.1647 28.7863 34.1647 27.716 33.5058 27.057H33.5005ZM12.5553 8.49853L7.49424 13.5599C6.83525 14.219 6.83525 15.2892 7.49424 15.9483L12.5553 21.0097C13.0403 21.4947 13.7625 21.6371 14.3951 21.3735C15.0278 21.1099 15.439 20.493 15.439 19.8129V16.4386H32.309C33.2422 16.4386 33.996 15.6847 33.996 14.7515C33.996 13.8183 33.2422 13.0643 32.309 13.0643H15.439V9.69007C15.439 9.00994 15.0278 8.39308 14.3951 8.12947C13.7625 7.86586 13.0403 8.01348 12.5553 8.49326V8.49853Z" fill="black"/>
@@ -30,10 +30,13 @@
               </div>
               <div class="currency-options">
                 <img src="{{ url_for('static', filename='images/flags/thailand.png')}}" alt="Country flag of selected currency">
-                <div class="dropdown">&#9660;</div>
+                <div class="dropdown">THB &#9660;</div>
               </div>
            </div>
         </div>
     </div>
 </main>
+<footer>
+    <p>A small app to Convert currencies</p>
+</footer>
 {% endblock %}
