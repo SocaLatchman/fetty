@@ -18,7 +18,7 @@ font-style: normal;
 header {
 width: 80%;
 margin: 0 auto;  
-padding: 25px 0 50px 0;
+padding: 50px 0;
 text-align: center;
 }
 
@@ -29,9 +29,9 @@ margin: 10px 0;
 
 header img {
 display: block;    
-margin: 0 auto; 
-width: 256px;
-height: 256px;  
+margin: 15px auto 0 auto; 
+width: 175px;
+height: 175px;  
 border-radius: 8px; 
 }
 
@@ -106,10 +106,14 @@ border-radius: 8px;
 display: inline;
 cursor: pointer;
 position: relative;
-top: 5px;
 left: 10px;
 font-size: 0.7em;
 color: #595959;
+}
+
+.dropdown select {
+border: none;    
+outline: transparent;
 }
 
 footer {

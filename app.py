@@ -1,7 +1,10 @@
 from flask import Flask, render_template
+from dotenv import load_dotenv
 import os, random
 
+load_dotenv('.env')
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') 
 
 
 def get_random_image():
@@ -21,9 +24,10 @@ def get_random_image():
     return random.choice(image_list)
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', random_image=get_random_image())
+
 
 
 if __name__ == '__main__':
