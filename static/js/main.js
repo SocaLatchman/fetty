@@ -5,6 +5,10 @@ leftDropdown.addEventListener('change', (e) => {
     console.log(e.currentTarget.value);
 });
 
+// leftDropdown.addEventListener('click', () => {
+
+// });
+
 rightDropdown.addEventListener('change', (e) => {
     console.log(e.currentTarget.value);
 });
