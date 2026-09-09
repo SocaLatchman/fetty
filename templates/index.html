@@ -14,7 +14,7 @@
              </div>
              <div class="currency-options">
                 {% set usa = countries[139] %}
-               <img src="{{ url_for('static', filename='images/flags/' + usa.flag)}}" alt="Country flag of selected currency"> 
+               <img src="{{ url_for('static', filename='images/flags/' + usa.flag)}}" alt="Country flag of selected currency" id="first-flag"> 
                <div class="dropdown">
                   <select id="left-dropdown" name="left-dropdown">
                      <option value="{{ usa.currency_code }}">{{ usa.currency_code }}</option>
@@ -38,7 +38,7 @@
               </div>
               <div class="currency-options">
                 {% set random_country = countries | random %}
-                <img src="{{ url_for('static', filename='images/flags/' + random_country.flag)}}" alt="Country flag of selected currency"> 
+                <img src="{{ url_for('static', filename='images/flags/' + random_country.flag)}}" alt="Country flag of selected currency" id="second-flag"> 
                 <div class="dropdown">
                   <select id="right-dropdown" name="right-dropdown">
                     <option value="{{ random_country.currency_code }}">{{ random_country.currency_code }}</option>
