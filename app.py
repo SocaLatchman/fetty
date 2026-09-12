@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from dotenv import load_dotenv
 from decimal import Decimal
 import os, random, requests
@@ -171,7 +171,6 @@ def get_country_data():
         {"currency_code": "USD", "country": "United States", "flag": "united-states-of-america.png"},
         {"currency_code": "UYU", "country": "Uruguay", "flag": "uruguay.png"},
         {"currency_code": "UZS", "country": "Uzbekistan", "flag": "uzbekistan.png"},
-        {"currency_code": "VES", "country": "Venezuela", "flag": "venezuela.png"},
         {"currency_code": "VND", "country": "Vietnam", "flag": "vietnam.png"},
         {"currency_code": "VUV", "country": "Vanuatu", "flag": "vanuatu.png"},
         {"currency_code": "WST", "country": "Samoa", "flag": "samoa.png"},
@@ -189,12 +188,21 @@ def currency_rate_quote(from_currency_code, to_country_code):
     currency_api = requests.get(f"https://api.frankfurter.dev/v2/rate/{from_currency_code}/{to_country_code}")
     return currency_api.json()
 
-
-
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', random_image=get_random_image(), countries = get_country_data())
+
+@app.route('/currency-code/<data>', methods=['GET'])
+def currency_code(data):
+    countries = get_country_data()
+    result = {}
+    for country in countries:
+        if country['currency_code'] == data:
+            result = country['flag']
+    return jsonify({'data' : result})
+
+
+
 
 
 

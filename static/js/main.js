@@ -4,27 +4,27 @@ const fromCurrency = document.querySelector('#from_currency');
 const toCurrency = document.querySelector('#to_currency');
 
 
-leftDropdown.addEventListener('change', (e) => {
-    console.log(e.currentTarget.value);
-    if(rightDropdown.value != '') {
-           //capture both values and send them to the fetch api      
-    } else {
-
-    }
-});
-
-rightDropdown.addEventListener('change', (e) => {
-    console.log(e.currentTarget.value);
-    if(leftDropdown.value != '') {
-       //capture both values and send them to the fetch api  
-    } else {
-        
-    }
-});
 
 
-function switchCurrency(){
-    //Switch to the other currency and amount
+
+function swapFlag(selectedDropdown) {
+     //Use currency code to retrieve the appropriate flag
+     const currencyOptions = selectedDropdown.closest('.currency-options');
+     fetch(`http://127.0.0.1:5555/currency-code/${selectedDropdown.value}`)
+     .then(response => response.json())
+     .then(result => currencyOptions.querySelector('img').src=`static/images/flags/${result['data']}`); 
+}
+
+
+// function getCurrencyDetails(currencyAmount){
+      
+// }
+
+
+
+
+function swapCurrency(){
+    //Swap to the currency details
     const currencySwitcherButton = document.querySelector('#currency-switcher');
     currencySwitcherButton.addEventListener('click', () => {
          let newFromCurrency = toCurrency.value;
@@ -44,4 +44,8 @@ function switchCurrency(){
 
 }
 
-switchCurrency();
+leftDropdown.addEventListener('change', (e) => { swapFlag(e.currentTarget) });
+rightDropdown.addEventListener('change', (e) => { swapFlag(e.currentTarget) });
+fromCurrency.addEventListener('mouseout', (e) => { getCurrencyDetails(e.currentTarget) });
+toCurrency.addEventListener('mouseout', (e) => { getCurrencyDetails(e.currentTarget) });
+swapCurrency();
